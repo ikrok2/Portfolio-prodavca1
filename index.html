@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09090b">
+<title>АВТО-ХАБ — ухоженные автомобили с пробегом: сел и поехал</title>
+<meta name="description" content="Автомобили с пробегом после полной предпродажной подготовки: глубокая химчистка салона, полировка и детейлинг-мойка кузова. Чистый салон, свежий вид, без вложений после покупки.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309090b'/%3E%3Cpath d='M12 42V34Q12 30 18 29L26 26Q30 18 36 18H42Q48 19 52 28L56 30Q58 32 58 36V42Z' fill='%23d4af37'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09090b;--card:#111216;--card2:#17181d;--line:rgba(255,255,255,.08);--tx:#f1f1f3;--mut:#8e9099;--gold:#d4af37;--gold2:#ecd58a;--em:#10b981;--warn:#e07b6f;
+--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.6 var(--sans);overflow-x:hidden}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+h2{font:500 clamp(2rem,4.4vw,3rem)/1.1 var(--serif);letter-spacing:-.01em;margin-bottom:10px}
+.sub{color:var(--mut);max-width:58ch;margin-bottom:34px}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(9,9,11,.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.hd{display:flex;align-items:center;gap:20px;height:68px}
+.logo{font:600 24px/1 var(--serif);letter-spacing:.06em;white-space:nowrap}
+.logo small{display:block;font:500 11px/1.5 var(--sans);color:var(--mut);letter-spacing:.02em;margin-top:3px}
+.logo i{color:var(--gold);font-style:normal}
+nav{display:flex;gap:2px;margin-left:auto}
+nav a{padding:8px 14px;color:var(--mut);font-size:14px;font-weight:500;border-radius:8px;transition:color .25s}
+nav a:hover{color:var(--tx)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;border:1px solid var(--line);background:transparent;cursor:pointer;font-weight:600;font-size:14px;transition:border-color .25s,background .25s,transform .25s,box-shadow .25s;white-space:nowrap}
+.btn:hover{border-color:rgba(212,175,55,.6);background:rgba(212,175,55,.06)}
+.btn.gold{background:linear-gradient(135deg,#ecd58a,#c9a227);border-color:transparent;color:#14110a}
+.btn.gold:hover{box-shadow:0 10px 30px rgba(212,175,55,.25);transform:translateY(-1px);background:linear-gradient(135deg,#f2dd96,#d4af37)}
+.btn.sm{padding:8px 14px;font-size:13px}.btn.warn{color:var(--warn)}
+.hd .btn{padding:9px 16px}
+@media(max-width:880px){.hd{flex-wrap:wrap;height:auto;padding:12px 0 6px;gap:10px 14px}nav{order:3;width:100%;overflow-x:auto;margin:0}.hd .call{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:110px 0 70px;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:radial-gradient(900px 520px at 78% 38%,rgba(212,175,55,.13),transparent 65%),radial-gradient(600px 400px at 10% 100%,rgba(255,255,255,.04),transparent 70%)}
+.hero-car{position:absolute;right:-6%;bottom:6%;width:min(980px,92vw);aspect-ratio:8/3;background-size:contain;background-repeat:no-repeat;background-position:right bottom;opacity:.34;z-index:-1;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%);mask-image:linear-gradient(90deg,transparent,#000 35%)}
+.hero:after{content:"";position:absolute;inset:auto 0 0 0;height:160px;background:linear-gradient(transparent,var(--bg));z-index:-1}
+.seal{display:inline-flex;align-items:center;gap:10px;color:var(--gold2);font-size:14px;font-weight:500;margin-bottom:26px}
+.seal:before{content:"";width:36px;height:1px;background:var(--gold)}
+.hero h1{font:500 clamp(2.5rem,6vw,4.9rem)/1.02 var(--serif);letter-spacing:-.02em;max-width:17ch}
+.hero p{color:var(--mut);font-size:clamp(1rem,1.7vw,1.15rem);max-width:52ch;margin:26px 0 32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.cta .btn{padding:18px 34px;font-size:16px;border-radius:12px}
+.marks{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.mark{font-size:13px;color:var(--metal,#c8cad2);padding:7px 14px;border-radius:99px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.hero .seal,.hero h1,.hero p,.hero .cta,.hero .marks{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.1s}.hero p{animation-delay:.22s}.hero .cta{animation-delay:.34s}.hero .marks{animation-delay:.46s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:72px;border-top:1px solid var(--line)}
+.stat{padding:30px 26px 6px 0}.stat+.stat{padding-left:30px;border-left:1px solid var(--line)}
+.num{display:flex;align-items:baseline;gap:.12em;font:800 clamp(2.4rem,4vw,3.4rem)/1 var(--sans);font-variant-numeric:tabular-nums;letter-spacing:-.03em;white-space:nowrap}
+.num .n{font:inherit;color:var(--tx)}.num .sfx{font:inherit;color:var(--gold)}.num.txt{white-space:normal;flex-wrap:wrap;line-height:1.05;column-gap:.25em}
+.lbl{color:var(--mut);font-size:14px;margin-top:10px}
+@media(max-width:700px){.stats{grid-template-columns:1fr}.stat,.stat+.stat{padding:22px 0;border-left:0}.stat+.stat{border-top:1px solid var(--line)}}
+/* filters */
+.tabs{display:inline-flex;gap:6px;margin-bottom:20px}
+.tabs button{border:1px solid var(--line);background:none;padding:9px 18px;border-radius:99px;cursor:pointer;color:var(--mut);font-weight:600;font-size:14px;transition:.25s}
+.tabs button:hover{color:var(--tx)}.tabs button.on{background:var(--tx);color:#09090b;border-color:var(--tx)}
+.filters{display:grid;grid-template-columns:2fr repeat(6,1fr);gap:10px;margin-bottom:28px}
+.filters input,.filters select,.fm input,.fm select,.fm textarea,.in{width:100%;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;outline:none;transition:border-color .25s,box-shadow .25s;font-size:15px}
+.filters input:focus,.filters select:focus,.fm input:focus,.fm select:focus,.fm textarea:focus,.in:focus{border-color:rgba(212,175,55,.7);box-shadow:0 0 0 3px rgba(212,175,55,.12)}
+select option{background:var(--card)}
+@media(max-width:1000px){.filters{grid-template-columns:1fr 1fr}.filters input:first-child{grid-column:1/-1}}
+.note{display:flex;gap:10px;align-items:center;color:var(--mut);font-size:14px;margin-bottom:20px}
+.note:before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:24px}
+.car{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .45s}
+.car:hover{transform:translateY(-5px);border-color:rgba(212,175,55,.35);box-shadow:0 24px 50px rgba(0,0,0,.55)}
+.car.sold .ph img{filter:grayscale(1) brightness(.7)}.car.sold .cb{opacity:.7}
+.ph{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0d0e11}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.car:hover .ph img{transform:scale(1.06)}
+.ph:after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(transparent,rgba(9,9,11,.55));pointer-events:none}
+.arr{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(9,9,11,.6);color:#fff;cursor:pointer;opacity:0;transition:opacity .25s,background .25s;font-size:18px;line-height:1;backdrop-filter:blur(6px)}
+.arr:hover{background:rgba(9,9,11,.9)}.ph:hover .arr{opacity:1}.arr.l{left:10px}.arr.r{right:10px}
+@media(hover:none){.arr{opacity:.9}}
+.dots{position:absolute;z-index:2;bottom:10px;left:0;right:0;display:flex;gap:5px;justify-content:center}
+.dots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.45);transition:.3s}.dots i.on{background:var(--gold);width:18px;border-radius:4px}
+.tag{position:absolute;z-index:2;top:14px;left:14px;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;padding:5px 11px;border-radius:99px;backdrop-filter:blur(8px)}
+.tag.ok{background:rgba(9,9,11,.6);color:var(--em);border:1px solid rgba(16,185,129,.4)}
+.tag.ok:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--em)}
+.tag.no{background:rgba(241,241,243,.92);color:#09090b}
+.cb{padding:20px 22px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.ttl{font:500 24px/1.15 var(--serif);letter-spacing:.005em}
+.price{font:800 24px/1 var(--sans);font-variant-numeric:tabular-nums;color:var(--gold);letter-spacing:-.01em}
+.meta{color:var(--mut);font-size:14px;display:flex;flex-wrap:wrap;gap:4px 16px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:500;padding:4px 10px;border-radius:99px;color:#c8cad2;background:rgba(255,255,255,.05)}
+.chip.g{color:var(--em);background:rgba(16,185,129,.1)}.chip.a{color:var(--gold2);background:rgba(212,175,55,.1)}
+.cf{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+.empty{grid-column:1/-1;text-align:center;padding:56px 16px;color:var(--mut)}
+/* approach */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px}
+.col{padding-top:20px;border-top:1px solid var(--line)}
+.col h3{font:500 24px/1.2 var(--serif);margin-bottom:8px}.col p{color:var(--mut);font-size:15px}
+.col .gl{width:26px;height:26px;color:var(--gold);margin-bottom:14px;display:block}
+/* contacts */
+.ct{display:grid;grid-template-columns:1fr 1.05fr;gap:28px}@media(max-width:860px){.ct{grid-template-columns:1fr}}
+.vcard{background:linear-gradient(160deg,#16171c,#0e0f12);border:1px solid var(--line);border-radius:22px;padding:32px;position:relative;overflow:hidden}
+.vcard:before{content:"";position:absolute;width:300px;height:300px;right:-110px;top:-110px;background:radial-gradient(circle,rgba(212,175,55,.16),transparent 70%)}
+.mono{width:60px;height:60px;border-radius:50%;border:1px solid rgba(212,175,55,.55);display:grid;place-items:center;font:600 22px var(--serif);color:var(--gold);margin-bottom:18px;letter-spacing:.04em}
+.vcard h3{font:500 30px/1.1 var(--serif)}.role{color:var(--mut);margin:6px 0 16px}
+.online{display:inline-flex;gap:9px;align-items:center;font-size:13px;color:var(--gold2)}
+.online i{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(212,175,55,0)}0%{box-shadow:0 0 0 0 rgba(212,175,55,.55)}}
+.links{display:grid;gap:10px;margin-top:24px}
+.links a,.links button{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.02);cursor:pointer;font-weight:600;font-size:15px;transition:border-color .3s,background .3s,box-shadow .3s;text-align:left}
+.links a:hover,.links button:hover{border-color:rgba(212,175,55,.6);background:rgba(212,175,55,.06);box-shadow:0 0 28px rgba(212,175,55,.1)}
+.links small{color:var(--mut);font-weight:400;font-size:13px}
+.fm{display:grid;gap:14px}.fm label{font-size:13px;color:var(--mut);display:grid;gap:6px}
+.fm .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:520px){.fm .two{grid-template-columns:1fr}}
+.reqf{padding:8px 0}.reqf h3{font:500 30px/1.1 var(--serif);margin-bottom:6px}
+.send{position:relative;overflow:hidden}.send.go{pointer-events:none}
+.send.go:after{content:"Открываем Telegram";position:absolute;inset:0;display:grid;place-items:center;background:var(--tx);color:#09090b;animation:up .4s}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px}
+/* modal */
+#ov{position:fixed;inset:0;z-index:100;background:rgba(4,4,6,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:max(16px,env(safe-area-inset-top)) 12px 24px}
+#ov.on{display:flex;animation:fade .3s}@keyframes fade{from{opacity:0}}
+.md{background:var(--card);border:1px solid var(--line);border-radius:22px;width:100%;max-width:920px;margin:auto;position:relative;animation:pop .4s cubic-bezier(.2,.8,.2,1)}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.98)}}
+.md.sm{max-width:480px}.mb{padding:28px}
+.x{position:absolute;top:14px;right:14px;z-index:3;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(9,9,11,.75);cursor:pointer;font-size:16px;transition:.25s}.x:hover{border-color:var(--gold)}
+.big{aspect-ratio:16/10;background:#0d0e11;border-radius:22px 22px 0 0;overflow:hidden}.big img{width:100%;height:100%;object-fit:cover}
+.th{display:flex;gap:8px;padding:12px 28px 0;overflow-x:auto}.th img{width:80px;height:50px;object-fit:cover;border-radius:8px;border:1px solid transparent;cursor:pointer;opacity:.55;flex:none;transition:.25s}.th img.on{border-color:var(--gold);opacity:1}
+.mt{font:500 clamp(1.8rem,4vw,2.5rem)/1.1 var(--serif);margin:12px 0 6px}
+table.sp{width:100%;border-collapse:collapse;margin:16px 0}.sp td{padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}.sp td:first-child{color:var(--mut);width:42%}
+.md h3{font:500 22px var(--serif);margin:18px 0 8px}
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:4px 18px}.check div{padding:7px 0;font-size:14.5px}.check b{color:var(--gold);margin-right:6px}.check b.e{color:var(--em)}.check s{text-decoration:none;color:var(--mut);margin-right:6px}
+.desc{color:#c8cad2;white-space:pre-line}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.acts .btn{flex:1;min-width:140px;padding:14px 18px}
+/* admin */
+.row{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.row img{width:72px;height:45px;object-fit:cover;border-radius:8px}.row .g1{flex:1;min-width:150px}.row .g1 small{color:var(--mut);display:block}
+.pf{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+.pi{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;border:1px solid var(--line)}.pi.main{border:2px solid var(--gold)}
+.pi img{width:100%;height:100%;object-fit:cover}.pi button{position:absolute;bottom:4px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(9,9,11,.85);color:#fff;cursor:pointer}
+.pi .st{left:4px}.pi .rm{right:4px}
+.cbx{display:flex;gap:8px;flex-wrap:wrap}.cbx label{display:flex;flex-direction:row;align-items:center;gap:8px;color:var(--tx);background:var(--card2);padding:9px 14px;border-radius:10px;border:1px solid var(--line);cursor:pointer;font-size:14px}.cbx input{width:auto;accent-color:#d4af37}
+/* toast + reveal */
+#toasts{position:fixed;bottom:max(18px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:200;display:grid;gap:8px;width:min(92vw,380px)}
+.toast{background:#1a1b20;border:1px solid var(--line);border-left:3px solid var(--gold);padding:13px 16px;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.55);animation:up .35s;font-size:14px}.toast.err{border-left-color:var(--warn)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+  <a href="#top" class="logo">АВТО<i>·</i>ХАБ<small>Ухоженные автомобили с пробегом</small></a>
+  <nav><a href="#catalog" data-go="available">Авто в наличии</a><a href="#catalog" data-go="sold">Проданные</a><a href="#about">О подходе</a><a href="#contacts">Контакты</a></nav>
+  <a class="btn call" href="#contacts">Связаться</a>
+  <button class="btn" id="adminBtn">Кабинет владельца</button>
+</div></header>
+
+<main id="top">
+<div class="hero">
+  <div class="hero-bg"></div><div class="hero-car" id="heroCar"></div>
+  <div class="wrap">
+    <div class="seal">Ухоженные автомобили после полной предпродажной подготовки</div>
+    <h1>Сел и поехал: чистый салон, свежий вид, без возни после покупки</h1>
+    <p>Я покупаю автомобили и привожу их в порядок: глубокая химчистка салона, полировка и детейлинг-мойка кузова, устранение мелких недочётов. Вы приезжаете, садитесь в чистую, приятно пахнущую машину и сразу едете по делам, без вложений в косметику.</p>
+    <div class="cta"><a class="btn gold" href="#catalog">Смотреть авто в наличии</a><a class="btn" href="#contacts">Связаться</a></div>
+    <div class="marks"><span class="mark">Химчистка салона и багажника</span><span class="mark">Полировка и детейлинг-мойка</span><span class="mark">Показ при дневном свете</span><span class="mark">Тест-драйв в удобное время</span></div>
+    <div class="stats">
+      <div class="stat"><div class="num"><span class="n" data-to="100">0</span><span class="sfx">+</span></div><div class="lbl">довольных покупателей и переданных ключей</div></div>
+      <div class="stat"><div class="num"><span class="n" data-to="100">0</span><span class="sfx">%</span></div><div class="lbl">полная предпродажная подготовка и химчистка каждого авто</div></div>
+      <div class="stat"><div class="num txt"><span class="n">В день</span><span class="sfx">обращения</span></div><div class="lbl">осмотр, тест-драйв и быстрое оформление сделки</div></div>
+    </div>
+  </div>
+</div>
+
+<section id="catalog"><div class="wrap">
+  <h2 class="rv">Каталог автомобилей</h2>
+  <p class="sub rv">Актуальные объявления обновляются сразу после публикации.</p>
+  <div id="demoNote"></div>
+  <div class="tabs rv" id="tabs"><button data-t="available" class="on">В наличии</button><button data-t="sold">Продано</button><button data-t="all">Все авто</button></div>
+  <div class="filters rv">
+    <input id="fq" placeholder="Поиск: марка или модель" type="search">
+    <input id="fpmin" type="number" inputmode="numeric" placeholder="Цена от, ₽">
+    <input id="fpmax" type="number" inputmode="numeric" placeholder="Цена до, ₽">
+    <input id="fymin" type="number" inputmode="numeric" placeholder="Год от">
+    <select id="ftr"><option value="">Любая коробка</option><option>АКПП</option><option>МКПП</option><option>Вариатор</option><option>Робот</option></select>
+    <select id="fdr"><option value="">Любой привод</option><option>Передний</option><option>Задний</option><option>Полный</option></select>
+    <select id="fso"><option value="new">Сначала новые</option><option value="cheap">Дешевле</option><option value="exp">Дороже</option></select>
+  </div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2 class="rv">О подходе</h2><p class="sub rv">Покупаю машины, привожу их в порядок и продаю так, как сам хотел бы купить: чтобы можно было просто сесть и поехать.</p>
+  <div class="cols">
+    <div class="col rv"><svg class="gl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg><h3>Чистота как в новом авто</h3><p>Глубокая химчистка салона и багажника, детейлинг-мойка и полировка перед продажей. Без посторонних запахов и затёртостей.</p></div>
+    <div class="col rv"><svg class="gl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg><h3>Честный живой показ</h3><p>Показываю машину как есть, при дневном свете. Можно спокойно прокатиться, всё посмотреть и пощупать без спешки.</p></div>
+    <div class="col rv"><svg class="gl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 14l2 2 4-4"/></svg><h3>Быстрая сделка без лишней бюрократии</h3><p>Все документы готовы к переоформлению, адекватный торг у капота и помощь с оформлением.</p></div>
+  </div>
+</div></section>
+
+<section id="contacts"><div class="wrap">
+  <h2 class="rv">Контакты</h2><p class="sub rv">Отвечаю лично, обычно в течение нескольких минут.</p>
+  <div class="ct">
+    <div class="vcard rv">
+      <div class="mono">АХ</div><h3>Автоподборщик</h3><div class="role">Покупка, подготовка и продажа ухоженных автомобилей</div>
+      <div class="online"><i></i>На связи сейчас</div>
+      <div class="links">
+        <a id="cTg" target="_blank" rel="noopener">Написать в Telegram <small>быстрее всего</small></a>
+        <a id="cWa" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        <a id="cCall">Позвонить <small id="cPh"></small></a>
+        <button id="cCopy" type="button">Скопировать телефон</button>
+      </div>
+    </div>
+    <form class="reqf fm rv" id="reqForm">
+      <h3>Заказать подбор или продать своё авто</h3>
+      <label>Ваше имя<input name="name" required placeholder="Как к вам обращаться"></label>
+      <label>Телефон<input name="phone" type="tel" inputmode="tel" required placeholder="+7"></label>
+      <label>Что нужно<select name="kind"><option>Заказать автоподбор</option><option>Продать своё авто</option><option>Обмен / Trade-in</option></select></label>
+      <label>Пожелания или данные авто<textarea name="msg" rows="3" placeholder="Бюджет, марка, год — или данные вашего автомобиля"></textarea></label>
+      <button class="btn gold send" id="sendBtn" type="submit">Отправить заявку</button>
+    </form>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">© <span id="yr"></span> АВТО·ХАБ. Информация на сайте не является публичной офертой.</div></footer>
+
+<div id="ov"><div class="md" id="md"></div></div>
+<div id="toasts"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+/* ============================== НАСТРОЙКИ ============================== */
+const CFG = {
+  SUPABASE_URL: 'https://jebhvjfriptqcvevmdyy.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_EP9n-6r4p3o08_PTgGqTJg_mPrsPrrt', // публичный ключ; секретный ключ сюда нельзя
+  PHONE: '+7 933 933-66-64',
+  TG: 'portugalshaurma',      // username в Telegram без @
+  WA: '79339336664',          // WhatsApp: цифры без + и пробелов (тот же номер, при необходимости измените)
+  PIN: '676767',              // PIN-код кабинета владельца
+  BUCKET: 'car-photos'
+};
+/* ============================================================================= */
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const fmt = n => Number(n || 0).toLocaleString('ru-RU');
+const BADGES = ['После химчистки','Ухоженный салон','Кузов отполирован','Сел и поехал','Торг у капота'];
+let sb = null;
+try { if (window.supabase && CFG.SUPABASE_URL && CFG.SUPABASE_ANON_KEY) sb = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY); } catch (e) { console.error(e); }
+
+const DEMO = [
+ {title:'Toyota Camry',year:2019,price:2290000,mileage:78000,engine:'2.5 л, 181 л.с., бензин',transmission:'АКПП',drive:'Передний',color:'Белый',owners:1,city:'Москва',badges:['После химчистки','Ухоженный салон','Кузов отполирован','Сел и поехал'],description:'Один владелец, две связки ключей. Салон после глубокой химчистки, кузов отполирован. Можно приехать, сесть и поехать.',status:'available',photos:[]},
+ {title:'Kia Sportage',year:2021,price:2790000,mileage:42000,engine:'2.0 л, 150 л.с., бензин',transmission:'АКПП',drive:'Полный',color:'Серый',owners:1,city:'Москва',badges:['После химчистки','Ухоженный салон','Сел и поехал','Торг у капота'],description:'Полный привод, камера кругового обзора, панорамная крыша. Салон и багажник чистые, без запахов.',status:'available',photos:[]},
+ {title:'BMW 320d',year:2017,price:2150000,mileage:121000,engine:'2.0 л, 190 л.с., дизель',transmission:'АКПП',drive:'Задний',color:'Чёрный',owners:2,city:'Санкт-Петербург',badges:['Кузов отполирован','Ухоженный салон','Торг у капота'],description:'Кузов после детейлинг-мойки и полировки, салон аккуратный. Покажу при дневном свете, можно прокатиться.',status:'available',photos:[]},
+ {title:'Volkswagen Polo',year:2020,price:1190000,mileage:64000,engine:'1.6 л, 110 л.с., бензин',transmission:'МКПП',drive:'Передний',color:'Синий',owners:2,city:'Москва',badges:['После химчистки','Ухоженный салон','Сел и поехал'],description:'Экономичный городской вариант. Салон свежий после химчистки, документы готовы к переоформлению.',status:'available',photos:[]},
+ {title:'Mazda CX-5',year:2018,price:1980000,mileage:96000,engine:'2.0 л, 150 л.с., бензин',transmission:'АКПП',drive:'Полный',color:'Красный',owners:1,city:'Казань',badges:['После химчистки','Кузов отполирован','Сел и поехал'],description:'Продана за 3 дня. Оставлена в архиве как пример подготовленных автомобилей.',status:'sold',photos:[]}
+];
+let cars = [], demo = false, tab = 'available', admin = false, edit = null, pf = [];
+const gi = {};
+
+/* силуэт автомобиля: герой и заглушка вместо фото */
+const CG = `<defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4af37" stop-opacity=".62"/><stop offset="1" stop-color="#d4af37" stop-opacity=".07"/></linearGradient><radialGradient id="bg" cx=".5" cy=".38" r=".85"><stop offset="0" stop-color="#1e1f25"/><stop offset="1" stop-color="#09090b"/></radialGradient></defs>`;
+const CAR = `<path d="M60 210V185Q60 170 85 165L190 150Q235 95 300 88H470Q540 92 590 150L700 165Q735 172 740 195V210Z" fill="url(#cg)"/><circle cx="190" cy="212" r="38" fill="#09090b" stroke="rgba(212,175,55,.5)" stroke-width="3"/><circle cx="610" cy="212" r="38" fill="#09090b" stroke="rgba(212,175,55,.5)" stroke-width="3"/>`;
+const uri = svg => 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+function ph(c){
+  return uri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">${CG}<rect width="800" height="500" fill="url(#bg)"/><g transform="translate(0,80)">${CAR}</g><text x="400" y="400" font-size="34" fill="#c8cad2" text-anchor="middle" font-family="Georgia,serif">${esc((c.title || '') + ' ' + (c.year || ''))}</text></svg>`);
+}
+$('#heroCar').style.backgroundImage = `url("${uri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">${CG}${CAR}</svg>`)}")`;
+const photos = c => (Array.isArray(c.photos) && c.photos.length) ? c.photos : [ph(c)];
+
+function toast(msg, err){
+  const d = document.createElement('div'); d.className = 'toast' + (err ? ' err' : ''); d.textContent = msg;
+  $('#toasts').append(d); setTimeout(() => { d.style.opacity = 0; d.style.transition = '.4s'; setTimeout(() => d.remove(), 400); }, 3400);
+}
+function openModal(html, small){ $('#md').className = 'md' + (small ? ' sm' : ''); $('#md').innerHTML = `<button class="x" data-close aria-label="Закрыть">✕</button>` + html; $('#ov').classList.add('on'); document.body.style.overflow = 'hidden'; $('#ov').scrollTop = 0; }
+function closeModal(){ $('#ov').classList.remove('on'); document.body.style.overflow = ''; }
+$('#ov').addEventListener('click', e => { if (e.target.id === 'ov' || e.target.closest('[data-close]')) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ---------- данные ---------- */
+async function load(){
+  const fallback = () => { cars = DEMO.map((c, i) => ({...c, id: 'demo-' + i, created_at: new Date(Date.now() - i * 864e5).toISOString()})); demo = true; };
+  if (!sb) return fallback();
+  const { data, error } = await sb.from('cars').select('*').order('created_at', { ascending: false });
+  if (error) { console.error(error); toast('Не удалось загрузить базу: ' + error.message, true); return fallback(); }
+  if (!data.length) return fallback();
+  cars = data; demo = false;
+}
+function filtered(){
+  const q = $('#fq').value.trim().toLowerCase(), pmin = +$('#fpmin').value || 0, pmax = +$('#fpmax').value || Infinity, ymin = +$('#fymin').value || 0;
+  const tr = $('#ftr').value, dr = $('#fdr').value, so = $('#fso').value;
+  const r = cars.filter(c => (tab === 'all' || c.status === tab) && (!q || (c.title || '').toLowerCase().includes(q)) && c.price >= pmin && c.price <= pmax && c.year >= ymin && (!tr || c.transmission === tr) && (!dr || c.drive === dr));
+  r.sort((a, b) => so === 'cheap' ? a.price - b.price : so === 'exp' ? b.price - a.price : new Date(b.created_at) - new Date(a.created_at));
+  return r;
+}
+const chips = c => (c.badges || []).filter(b => BADGES.includes(b)).map(b => `<span class="chip ${b === 'Сел и поехал' ? 'g' : b === 'Торг у капота' ? 'a' : ''}">${esc(b)}</span>`).join('');
+function render(){
+  $('#demoNote').innerHTML = !demo ? '' : `<div class="note">${sb ? 'Показаны демонстрационные автомобили, пока в базе нет объявлений. Добавьте первое авто в кабинете владельца.' : 'Демо-режим: подключите Supabase в блоке CFG, чтобы публиковать свои объявления.'}</div>`;
+  const list = filtered();
+  $('#grid').innerHTML = list.length ? list.map(c => {
+    const p = photos(c), i = gi[c.id] || 0, sold = c.status === 'sold';
+    return `<article class="car rv ${sold ? 'sold' : ''}" data-id="${c.id}">
+      <div class="ph"><img src="${esc(p[i % p.length])}" alt="${esc(c.title)}" loading="lazy">
+        ${sold ? '<span class="tag no">Продано</span>' : '<span class="tag ok">В наличии</span>'}
+        ${p.length > 1 ? `<button class="arr l" data-dir="-1" aria-label="Назад">‹</button><button class="arr r" data-dir="1" aria-label="Вперёд">›</button><div class="dots">${p.map((_, k) => `<i class="${k === i % p.length ? 'on' : ''}"></i>`).join('')}</div>` : ''}
+      </div>
+      <div class="cb"><div class="ttl">${esc(c.title)}, ${c.year}</div><div class="price">${fmt(c.price)} ₽</div>
+        <div class="meta"><span>${fmt(c.mileage)} км</span><span>${esc(c.engine)}</span><span>${esc(c.transmission)}</span><span>${esc(c.drive)}</span></div>
+        <div class="chips">${chips(c)}</div>
+        <div class="cf"><span>${esc(c.city)} · ${new Date(c.created_at).toLocaleDateString('ru-RU')}</span>${sold ? '' : `<button class="btn sm" data-msg="${c.id}">Написать по авто</button>`}</div>
+      </div></article>`;
+  }).join('') : `<div class="empty">По этим условиям ничего не найдено. Измените фильтры или откройте «Все авто».</div>`;
+  reveal();
+}
+$('#grid').addEventListener('click', e => {
+  const card = e.target.closest('.car'); if (!card) return; const id = card.dataset.id;
+  const arrow = e.target.closest('[data-dir]');
+  if (arrow){ e.stopPropagation(); const c = cars.find(x => x.id === id), n = photos(c).length; gi[id] = ((gi[id] || 0) + +arrow.dataset.dir + n) % n; card.querySelector('img').src = photos(c)[gi[id]]; card.querySelectorAll('.dots i').forEach((d, k) => d.classList.toggle('on', k === gi[id])); return; }
+  if (e.target.closest('[data-msg]')){ e.stopPropagation(); contactCar(id, 'tg'); return; }
+  openCar(id);
+});
+['fq','fpmin','fpmax','fymin','ftr','fdr','fso'].forEach(id => $('#' + id).addEventListener('input', render));
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setTab(b.dataset.t); });
+function setTab(t){ tab = t; $$('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.t === t)); render(); }
+$$('[data-go]').forEach(a => a.addEventListener('click', () => setTab(a.dataset.go)));
+
+/* ---------- связь ---------- */
+const carText = c => `Здравствуйте! Хочу посмотреть ${c.title}, ${c.year} за ${fmt(c.price)} ₽ с вашего сайта. Когда удобно подъехать?`;
+function contactCar(id, via){
+  const c = cars.find(x => x.id === id); if (!c) return;
+  const key = via === 'wa' ? CFG.WA : CFG.TG;
+  if (!key) return toast(via === 'wa' ? 'Номер WhatsApp не указан в блоке CFG' : 'Telegram не указан в блоке CFG', true);
+  const t = encodeURIComponent(carText(c));
+  window.open(via === 'wa' ? `https://wa.me/${key}?text=${t}` : `https://t.me/${key}?text=${t}`, '_blank', 'noopener');
+}
+const telHref = () => 'tel:' + CFG.PHONE.replace(/[^+\d]/g, '');
+function openCar(id){
+  const c = cars.find(x => x.id === id); if (!c) return; const p = photos(c), sold = c.status === 'sold';
+  openModal(`<div class="big"><img id="bigImg" src="${esc(p[0])}" alt="${esc(c.title)}"></div>
+  ${p.length > 1 ? `<div class="th">${p.map((u, i) => `<img src="${esc(u)}" class="${i ? '' : 'on'}" data-th="${i}" alt="">`).join('')}</div>` : ''}
+  <div class="mb"><div class="chips">${sold ? '<span class="chip">Продано</span>' : '<span class="chip g">В наличии</span>'}${chips(c)}</div>
+  <div class="mt">${esc(c.title)}, ${c.year}</div><div class="price" style="font-size:30px">${fmt(c.price)} ₽</div>
+  <table class="sp"><tr><td>Год выпуска</td><td>${c.year}</td></tr><tr><td>Пробег</td><td>${fmt(c.mileage)} км</td></tr><tr><td>Двигатель</td><td>${esc(c.engine)}</td></tr><tr><td>Коробка</td><td>${esc(c.transmission)}</td></tr><tr><td>Привод</td><td>${esc(c.drive)}</td></tr><tr><td>Цвет</td><td>${esc(c.color)}</td></tr><tr><td>Владельцев по ПТС</td><td>${c.owners}</td></tr><tr><td>Город</td><td>${esc(c.city)}</td></tr></table>
+  <h3>Что сделано по машине</h3><div class="check"><div><b>✓</b>Глубокая химчистка салона и багажника</div><div><b>✓</b>Детейлинг-мойка и полировка кузова</div><div><b>✓</b>Мелкие недочёты по внешке и салону устранены</div><div><b>✓</b>Свежий нейтральный запах в салоне</div><div><b>✓</b>Документы готовы к переоформлению</div><div><b>✓</b>Готов к осмотру и тест-драйву в удобное время</div></div>
+  <h3>Описание</h3><p class="desc">${esc(c.description) || 'Подробности уточняйте у владельца.'}</p>
+  <div class="acts"><button class="btn gold" onclick="contactCar('${c.id}','tg')">Написать по этому авто</button><button class="btn" onclick="contactCar('${c.id}','wa')">WhatsApp</button><button class="btn" onclick="callNow()">Позвонить</button></div></div>`);
+  $('#md').querySelectorAll('[data-th]').forEach(t => t.addEventListener('click', () => { $('#bigImg').src = t.src; $('#md').querySelectorAll('[data-th]').forEach(x => x.classList.toggle('on', x === t)); }));
+}
+function callNow(){ if (!CFG.PHONE) return toast('Телефон не указан в блоке CFG', true); location.href = telHref(); }
+function setupContacts(){
+  $('#yr').textContent = new Date().getFullYear();
+  const bind = (el, ok, href, msg) => { if (ok) el.href = href; else el.addEventListener('click', e => { e.preventDefault(); toast(msg, true); }); };
+  bind($('#cTg'), CFG.TG, `https://t.me/${CFG.TG}`, 'Telegram не указан в блоке CFG');
+  bind($('#cWa'), CFG.WA, `https://wa.me/${CFG.WA}`, 'Номер WhatsApp не указан в блоке CFG');
+  bind($('#cCall'), CFG.PHONE, CFG.PHONE ? telHref() : '', 'Телефон не указан в блоке CFG');
+  $('#cPh').textContent = CFG.PHONE;
+}
+$('#cCopy').addEventListener('click', async () => {
+  if (!CFG.PHONE) return toast('Телефон не указан в блоке CFG', true);
+  try { await navigator.clipboard.writeText(CFG.PHONE); toast('Телефон скопирован: ' + CFG.PHONE); } catch { toast('Не удалось скопировать, выделите номер вручную', true); }
+});
+$('#reqForm').addEventListener('submit', e => {
+  e.preventDefault(); if (!CFG.TG) return toast('Telegram не указан в блоке CFG', true);
+  const f = Object.fromEntries(new FormData(e.target)), b = $('#sendBtn'); b.classList.add('go');
+  const t = `Здравствуйте! ${f.kind}.\nИмя: ${f.name}\nТелефон: ${f.phone}\n${f.msg || ''}`;
+  setTimeout(() => { window.open(`https://t.me/${CFG.TG}?text=${encodeURIComponent(t)}`, '_blank', 'noopener'); toast('Заявка подготовлена: отправьте сообщение в Telegram'); b.classList.remove('go'); e.target.reset(); }, 1100);
+});
+
+/* ---------- кабинет владельца ---------- */
+$('#adminBtn').addEventListener('click', () => {
+  if (admin) return adminPanel();
+  if (!CFG.PIN) return toast('Задайте PIN-код в блоке CFG в начале скрипта', true);
+  openModal(`<div class="mb"><h2>Кабинет владельца</h2><p class="sub" style="margin-bottom:18px">Введите PIN-код, чтобы управлять объявлениями.</p><form class="fm" id="pinF"><input class="in" id="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="PIN-код"><button class="btn gold" type="submit">Войти</button></form></div>`, true);
+  $('#pin').focus();
+  $('#pinF').addEventListener('submit', e => { e.preventDefault(); if ($('#pin').value === CFG.PIN){ admin = true; adminPanel(); toast('Вы вошли в кабинет'); } else { toast('Неверный PIN-код', true); $('#pin').value = ''; } });
+});
+function adminPanel(){
+  openModal(`<div class="mb"><h2>Мои объявления</h2>
+  <div class="acts" style="margin:12px 0 10px"><button class="btn gold" id="aNew">Добавить авто</button>${demo && sb ? '<button class="btn" id="aSeed">Заполнить демо-базу</button>' : ''}<button class="btn" id="aOut">Выйти</button></div>
+  ${!sb ? '<div class="note">Supabase не подключён: заполните SUPABASE_URL и SUPABASE_ANON_KEY в блоке CFG.</div>' : ''}
+  ${cars.map(c => `<div class="row" data-id="${c.id}"><img src="${esc(photos(c)[0])}" alt=""><div class="g1"><b>${esc(c.title)}, ${c.year}</b><small>${fmt(c.price)} ₽ · ${c.status === 'sold' ? 'Продано' : 'В наличии'}${String(c.id).startsWith('demo-') ? ' · демо' : ''}</small></div>
+    <button class="btn sm" data-a="edit">Изменить</button><button class="btn sm" data-a="tog">${c.status === 'sold' ? 'Вернуть в наличие' : 'Отметить проданным'}</button><button class="btn sm warn" data-a="del">Удалить</button></div>`).join('')}</div>`);
+  $('#aNew').onclick = () => carForm(null); $('#aOut').onclick = () => { admin = false; closeModal(); toast('Вы вышли из кабинета'); };
+  if ($('#aSeed')) $('#aSeed').onclick = seed;
+  $('#md').querySelectorAll('.row').forEach(r => r.addEventListener('click', async e => {
+    const a = e.target.closest('[data-a]')?.dataset.a; if (!a) return; const c = cars.find(x => x.id === r.dataset.id);
+    if (!sb) return toast('Supabase не подключён: заполните блок CFG', true);
+    if (String(c.id).startsWith('demo-')) return toast('Это демо-данные. Нажмите «Заполнить демо-базу» или добавьте своё авто', true);
+    if (a === 'edit') return carForm(c);
+    if (a === 'tog'){ const s = c.status === 'sold' ? 'available' : 'sold'; const { error } = await sb.from('cars').update({ status: s }).eq('id', c.id); if (error) return toast(error.message, true); toast(s === 'sold' ? 'Отмечено проданным' : 'Возвращено в наличие'); }
+    if (a === 'del'){ if (!confirm('Удалить объявление безвозвратно?')) return; const paths = (c.photos || []).filter(u => u.includes('/' + CFG.BUCKET + '/')).map(u => decodeURIComponent(u.split('/' + CFG.BUCKET + '/')[1])); const { error } = await sb.from('cars').delete().eq('id', c.id); if (error) return toast(error.message, true); if (paths.length) sb.storage.from(CFG.BUCKET).remove(paths); toast('Объявление удалено'); }
+    await load(); render(); adminPanel();
+  }));
+}
+async function seed(){
+  const { error } = await sb.from('cars').insert(DEMO.map(c => ({...c}))); if (error) return toast(error.message, true);
+  toast('Демо-база заполнена'); await load(); render(); adminPanel();
+}
+function carForm(c){
+  edit = c; pf = c ? (c.photos || []).map(u => ({ src: u, file: null })) : [];
+  const v = k => esc(c ? c[k] : '');
+  const sel = (n, arr, cur) => `<select name="${n}">${arr.map(o => `<option ${o === cur ? 'selected' : ''}>${o}</option>`).join('')}</select>`;
+  openModal(`<div class="mb"><h2>${c ? 'Редактировать авто' : 'Новое авто'}</h2><form class="fm" id="cf" style="margin-top:14px">
+  <label>Марка и модель<input name="title" required value="${v('title')}" placeholder="Toyota Camry"></label>
+  <div class="two"><label>Год<input name="year" type="number" inputmode="numeric" required value="${v('year')}"></label><label>Цена, ₽<input name="price" type="number" inputmode="numeric" required value="${v('price')}"></label></div>
+  <div class="two"><label>Пробег, км<input name="mileage" type="number" inputmode="numeric" required value="${v('mileage')}"></label><label>Владельцев<input name="owners" type="number" inputmode="numeric" min="1" value="${c ? c.owners : 1}"></label></div>
+  <label>Двигатель (объём, мощность, топливо)<input name="engine" value="${v('engine')}" placeholder="2.0 л, 150 л.с., бензин"></label>
+  <div class="two"><label>Коробка${sel('transmission', ['АКПП','МКПП','Вариатор','Робот'], c?.transmission)}</label><label>Привод${sel('drive', ['Передний','Задний','Полный'], c?.drive)}</label></div>
+  <div class="two"><label>Цвет<input name="color" value="${v('color')}"></label><label>Город<input name="city" value="${v('city')}"></label></div>
+  <label>Статус<select name="status"><option value="available" ${c?.status !== 'sold' ? 'selected' : ''}>В наличии</option><option value="sold" ${c?.status === 'sold' ? 'selected' : ''}>Продано</option></select></label>
+  <div><div style="font-size:13px;color:var(--mut);margin-bottom:8px">Преимущества</div><div class="cbx">${BADGES.map(b => `<label><input type="checkbox" name="badge" value="${b}" ${c && (c.badges || []).includes(b) ? 'checked' : ''}> ${b}</label>`).join('')}</div></div>
+  <label>Описание<textarea name="description" rows="4">${v('description')}</textarea></label>
+  <div><div style="font-size:13px;color:var(--mut);margin-bottom:8px">Фото. Первое фото главное, кнопка ★ делает фото главным</div><div class="pf" id="pf"></div>
+  <input type="file" id="files" accept="image/*" multiple hidden><button type="button" class="btn" id="addPh" style="margin-top:10px;width:100%">Добавить фото</button></div>
+  <div class="acts"><button class="btn gold" type="submit" id="saveBtn">${c ? 'Сохранить' : 'Опубликовать'}</button><button class="btn" type="button" id="back">Назад</button></div></form></div>`);
+  drawPf(); $('#back').onclick = adminPanel; $('#addPh').onclick = () => $('#files').click();
+  $('#files').onchange = e => { [...e.target.files].forEach(f => pf.push({ src: URL.createObjectURL(f), file: f })); e.target.value = ''; drawPf(); };
+  $('#pf').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const i = +b.parentElement.dataset.i; if (b.classList.contains('rm')) pf.splice(i, 1); else pf.unshift(pf.splice(i, 1)[0]); drawPf(); });
+  $('#cf').addEventListener('submit', saveCar);
+}
+function drawPf(){ $('#pf').innerHTML = pf.map((p, i) => `<div class="pi ${i ? '' : 'main'}" data-i="${i}"><img src="${esc(p.src)}" alt=""><button type="button" class="st" aria-label="Сделать главным">★</button><button type="button" class="rm" aria-label="Удалить">✕</button></div>`).join(''); }
+function compress(file){
+  return new Promise((res, rej) => {
+    const img = new Image(), url = URL.createObjectURL(file);
+    img.onload = () => {
+      const w = Math.min(1280, img.width), h = Math.round(img.height * w / img.width), cv = document.createElement('canvas');
+      cv.width = w; cv.height = h; const x = cv.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, w, h); x.drawImage(img, 0, 0, w, h);
+      cv.toBlob(b => { URL.revokeObjectURL(url); b ? res(b) : rej(new Error('Не удалось сжать фото')); }, 'image/jpeg', 0.8);
+    };
+    img.onerror = () => rej(new Error('Не удалось прочитать фото')); img.src = url;
+  });
+}
+async function saveCar(e){
+  e.preventDefault(); if (!sb) return toast('Supabase не подключён: заполните блок CFG', true);
+  const btn = $('#saveBtn'), f = new FormData(e.target), old = btn.textContent; btn.disabled = true;
+  try {
+    const urls = [], total = pf.filter(x => x.file).length; let n = 0;
+    for (const p of pf){
+      if (!p.file){ urls.push(p.src); continue; }
+      btn.textContent = `Загрузка фото ${++n} из ${total}…`;
+      const blob = await compress(p.file), path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.jpg`;
+      const { error } = await sb.storage.from(CFG.BUCKET).upload(path, blob, { contentType: 'image/jpeg', cacheControl: '31536000' });
+      if (error) throw error;
+      urls.push(sb.storage.from(CFG.BUCKET).getPublicUrl(path).data.publicUrl);
+    }
+    const row = { title: f.get('title').trim(), year: +f.get('year'), price: +f.get('price'), mileage: +f.get('mileage'), engine: f.get('engine').trim(), transmission: f.get('transmission'), drive: f.get('drive'), color: f.get('color').trim(), owners: +f.get('owners') || 1, city: f.get('city').trim(), badges: f.getAll('badge'), description: f.get('description').trim(), status: f.get('status'), photos: urls };
+    btn.textContent = 'Сохранение…';
+    const { error } = edit ? await sb.from('cars').update(row).eq('id', edit.id) : await sb.from('cars').insert(row);
+    if (error) throw error;
+    toast(edit ? 'Изменения сохранены' : 'Авто опубликовано'); await load(); render(); adminPanel();
+  } catch (err){ console.error(err); toast('Ошибка: ' + (err.message || err), true); btn.disabled = false; btn.textContent = old; }
+}
+
+/* ---------- анимации ---------- */
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: .1 });
+function reveal(){ $$('.rv:not(.in)').forEach(el => io.observe(el)); }
+function countUp(el){
+  const to = +el.dataset.to, t0 = performance.now();
+  if (still){ el.textContent = to; return; }
+  (function step(t){ const k = Math.min(1, (t - t0) / 1600); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); })(t0);
+}
+const sio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ countUp(en.target); sio.unobserve(en.target); } }), { threshold: .6 });
+$$('[data-to]').forEach(el => sio.observe(el));
+setupContacts();
+(async () => { reveal(); await load(); render(); })();
+</script>
+</body>
+</html>
